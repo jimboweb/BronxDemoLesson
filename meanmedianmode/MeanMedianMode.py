@@ -17,11 +17,13 @@ print("on average we have " + str(average) + " siblings")
 
 sortedNumbers = sorted(siblingData)
 
-minSiblings = str(sortedNumbers[0])
-print("the smallest number of siblings is " + minSiblings)
+minSiblings = sortedNumbers[0]
+print("the smallest number of siblings is " + str(minSiblings))
 maxSiblings = sortedNumbers[numberCount-1]
 print("the largest number of siblings is " + str(maxSiblings))
 
+
+#find mode
 siblingCount = []
 
 for i in range(0,maxSiblings+1):
@@ -34,12 +36,14 @@ largestCount = max(siblingCount)
 
 modes = []
 
-for number in range(0,len(siblingCount)):
-    if siblingCount[number]==largestCount:
-        modes.append(number)
+for i, number in enumerate(siblingCount):
+    if number==largestCount:
+        modes.append(i)
 
 print("the modes of our number of siblings is " + str(modes))
 
+
+#find median
 median = 0
 if numberCount%2==0:
     firstMiddle = int(numberCount/2)
