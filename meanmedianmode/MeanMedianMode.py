@@ -30,9 +30,15 @@ for i in range(0,maxSiblings+1):
 for number in siblingData:
     siblingCount[number]+=1
 
-siblingMode = siblingCount.index(max(siblingCount))
+largestCount = max(siblingCount)
 
-print("the mode of our number of siblings is " + str(siblingMode))
+modes = []
+
+for number in range(0,len(siblingCount)):
+    if siblingCount[number]==largestCount:
+        modes.append(number)
+
+print("the modes of our number of siblings is " + str(modes))
 
 median = 0
 if numberCount%2==0:
